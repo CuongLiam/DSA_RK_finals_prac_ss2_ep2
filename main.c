@@ -69,7 +69,7 @@ int findBook(Node* root, char title[]) {
 
 Node* findMin(Node* root) {
     while (root && root->left != NULL) {
-        root == root->left;
+        root = root->left;
     }
     return root;
 }
@@ -95,12 +95,12 @@ Node* deleteNode(Node* root, char title[]) {
         //case 2: 1 child
         else if (root->left == NULL) {
             Node* temp = root->right;
-            free(root->left);
+            free(root->right);
             return temp;
         }
         else if (root->right == NULL) {
             Node* temp = root->left;
-            free(root->right);
+            free(root->left);
             return temp;
         }
 
